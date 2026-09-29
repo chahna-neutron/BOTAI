@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>🦋 Butterfly AI</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <!-- Background -->
+
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="blob blob4"></div>
+
+    <!-- Fireflies -->
+
+    <div id="particles"></div>
+
+    <!-- Butterflies -->
+
+    <div class="butterfly butterfly1">🦋</div>
+    <div class="butterfly butterfly2">🦋</div>
+    <div class="butterfly butterfly3">🦋</div>
+    <div class="butterfly butterfly4">🦋</div>
+
+
+    <!-- Main -->
+
+    <div class="chat-container">
+
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <h1>
+                🦋 Butterfly AI
+            </h1>
+
+            <p>
+                Your Calm & Intelligent Assistant
+            </p>
+
+            <div class="status">
+                ● Online
+            </div>
+
+            <div id="modeIndicator">
+                Current Mode:
+                <b>Normal</b>
+            </div>
+
+        </div>
+
+
+        <!-- MODES -->
+
+        <div class="prompt-bar">
+
+            <button
+                class="prompt-btn"
+                onclick="setMode('normal')"
+            >
+                🧠 Normal
+            </button>
+
+
+            <button
+                class="prompt-btn"
+                onclick="setMode('interview')"
+            >
+                🎯 Interview
+            </button>
+
+
+            <button
+                class="prompt-btn"
+                onclick="setMode('resume')"
+            >
+                📝 Resume
+            </button>
+
+        </div>
+
+
+        <!-- CHAT -->
+
+        <div
+            class="chat-box"
+            id="chatBox"
+        >
+
+            <div class="bot-message">
+
+                🌿 Welcome to Butterfly AI.
+
+                <br><br>
+
+                Ask me anything, upload a PDF or
+                image, or ask me to create an image.
+
+                <br><br>
+
+                🦋
+
+            </div>
+
+        </div>
+
+
+        <!-- FILE PREVIEW -->
+
+        <div
+            id="filePreview"
+            style="
+                display:none;
+                padding:0 20px 10px;
+                color:white;
+                font-size:13px;
+            "
+        >
+        </div>
+
+
+        <!-- INPUT -->
+
+        <div class="input-area">
+
+
+            <!-- PDF / FILE -->
+
+            <button
+                type="button"
+                title="Add PDF or image"
+                onclick="
+                    document
+                    .getElementById('fileInput')
+                    .click()
+                "
+            >
+                📎
+            </button>
+
+
+            <input
+                type="file"
+                id="fileInput"
+                multiple
+                accept="
+                    .pdf,
+                    .png,
+                    .jpg,
+                    .jpeg,
+                    .webp
+                "
+                style="display:none;"
+            >
+
+
+            <!-- IMAGE -->
+
+            <button
+                type="button"
+                title="Add image"
+                onclick="
+                    document
+                    .getElementById('imageInput')
+                    .click()
+                "
+            >
+                🖼️
+            </button>
+
+
+            <input
+                type="file"
+                id="imageInput"
+                multiple
+                accept="
+                    image/png,
+                    image/jpeg,
+                    image/webp
+                "
+                style="display:none;"
+            >
+
+
+            <!-- TEXT -->
+
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Ask Butterfly AI anything..."
+                autocomplete="off"
+                onkeypress="handleKey(event)"
+            >
+
+
+            <!-- SEND -->
+
+            <button
+                type="button"
+                onclick="sendMessage()"
+            >
+                Send ✨
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+</body>
+
+</html>
