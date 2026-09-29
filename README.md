@@ -18,6 +18,22 @@ Users can ask questions, upload PDFs or images for analysis, and generate images
 
 ---
 
+## 📸 Preview
+
+### 🏠 Main Interface
+
+![Cognifile AI Home](screenshots/home.png)
+
+### 💬 AI Chat
+
+![Cognifile AI Chat](screenshots/chat.png)
+
+### 🤖 AI Response
+
+![Cognifile AI Response](screenshots/response.png)
+
+---
+
 ## ✨ Features
 
 ### 💬 AI Chat
