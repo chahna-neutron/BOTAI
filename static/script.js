@@ -1,4 +1,4 @@
-console.log("🦋 BUTTERFLY AI LOADED");
+console.log(" ⟡ Cognifile AI LOADED");
 
 
 // ============================================================
@@ -439,7 +439,7 @@ async function sendMessage() {
 
 
     bot.innerHTML =
-        "🦋 Butterfly AI is thinking...";
+        "Cognifile AI is thinking...";
 
 
     chatBox.appendChild(
@@ -478,7 +478,7 @@ async function sendMessage() {
         // ====================================================
 
         bot.innerHTML =
-            "🦋 Butterfly AI is thinking...";
+            "✦ Cognifile AI is thinking...";
 
 
         const response =
@@ -519,7 +519,7 @@ async function sendMessage() {
 
             throw new Error(
                 data.error ||
-                "Butterfly AI failed."
+                "Cognifile AI failed."
             );
         }
 
@@ -535,7 +535,7 @@ async function sendMessage() {
 
             bot.innerHTML =
                 `
-                🦋 <b>Butterfly AI</b>
+                ✦ <b>Cognifile AI</b>
 
                 <br><br>
 
@@ -594,7 +594,7 @@ async function sendMessage() {
 
         bot.innerHTML =
             `
-            ⚠️ <b>Butterfly AI Error</b>
+            ⚠️ <b>Cognifile AI Error</b>
             <br><br>
             ${escapeHtml(
                 error.message

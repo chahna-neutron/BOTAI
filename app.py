@@ -305,7 +305,7 @@ def get_mode_prompt(mode):
 
     if mode == "interview":
         return """
-You are Butterfly AI in Interview Mode.
+You are Cognifile AI in Interview Mode.
 Act as a professional interviewer.
 Ask relevant questions.
 Evaluate the user's answers.
@@ -323,7 +323,7 @@ the uploaded material.
 
     if mode == "resume":
         return """
-You are Butterfly AI in Resume Mode.
+You are Cognifile AI in Resume Mode.
 You are an ATS-focused resume reviewer.
 Analyse the uploaded resume carefully.
 Improve:
@@ -341,7 +341,7 @@ or achievements.
     # NORMAL MODE
 
     return """
-You are Butterfly AI in Normal Mode.
+You are Cognifile AI in Normal Mode.
 You are a highly capable
 general-purpose AI assistant.
 You can answer questions,
@@ -447,7 +447,7 @@ def detect_intent(
     files
 ):
     prompt = """
-You are Butterfly AI's request router.
+You are Cognifile AI's request router.
 Choose exactly ONE:
 chat
 image
@@ -630,7 +630,7 @@ def generate_image(
         )
     )
     filename = (
-        "butterfly_"
+        "cognifile_"
         + uuid.uuid4().hex
         + ".png"
     )
@@ -742,7 +742,7 @@ def chat():
             files
         )
         print(
-            "Butterfly Intent:",
+            "Cognifile Intent:",
             intent
         )
         
@@ -761,7 +761,7 @@ def chat():
                 "image_url":
                     image_url,
                 "reply":
-                    "🦋 Your image is ready."
+                    "✦ Your image is ready."
             })
         
         # CHAT / PDF / IMAGE ANALYSIS
@@ -781,14 +781,14 @@ def chat():
         })
     except Exception as error:
         print(
-            "BUTTERFLY ERROR:",
+            "COGNIFILE ERROR:",
             repr(error)
         )
         return jsonify({
             "success":
                 False,
             "error":
-                "Butterfly AI could not process the request.",
+                "Cognifile AI could not process the request.",
             "details":
                 str(error)
         }), 500
@@ -803,7 +803,7 @@ def health():
         "status":
             "online",
         "service":
-            "Butterfly AI",
+            "Cognifile AI",
         "chat_model":
             CHAT_MODEL,
         "image_model":

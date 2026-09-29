@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>🦋 Butterfly AI</title>
+    <title>⟡ Cognifile AI</title>
 
     <link
         rel="stylesheet"
@@ -21,40 +21,69 @@
 
 <body>
 
-    <!-- Background -->
+    <!--
+        BACKGROUND
+        Kept simple so the existing JavaScript does not
+        lose any expected page elements.
+    -->
 
-    <div class="blob blob1"></div>
-    <div class="blob blob2"></div>
-    <div class="blob blob3"></div>
-    <div class="blob blob4"></div>
+    <div class="background">
 
-    <!-- Fireflies -->
+        <!-- Soft background glow -->
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
 
-    <div id="particles"></div>
+        <!-- Central glass orb -->
+        <div class="orb-container">
 
-    <!-- Butterflies -->
+            <div class="orb-glow"></div>
 
-    <div class="butterfly butterfly1">🦋</div>
-    <div class="butterfly butterfly2">🦋</div>
-    <div class="butterfly butterfly3">🦋</div>
-    <div class="butterfly butterfly4">🦋</div>
+            <div class="orb">
+
+                <div class="orb-highlight"></div>
+
+                <div class="orb-core"></div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 
-    <!-- Main -->
+    <!--
+        Hidden particle container.
+        Kept for compatibility with existing JavaScript.
+        It will not be visually displayed unless CSS/JS
+        explicitly makes it visible.
+    -->
+
+    <div
+        id="particles"
+        aria-hidden="true"
+    ></div>
+
+
+    <!--
+        MAIN APPLICATION
+    -->
 
     <div class="chat-container">
 
 
-        <!-- HEADER -->
+        <!-- =========================
+             HEADER
+        ========================== -->
 
         <div class="header">
 
             <h1>
-                🦋 Butterfly AI
+                ⟡ Cognifile AI
             </h1>
 
             <p>
-                Your Calm & Intelligent Assistant
+                Multimodal AI Assistant
             </p>
 
             <div class="status">
@@ -69,11 +98,14 @@
         </div>
 
 
-        <!-- MODES -->
+        <!-- =========================
+             MODES
+        ========================== -->
 
         <div class="prompt-bar">
 
             <button
+                type="button"
                 class="prompt-btn"
                 onclick="setMode('normal')"
             >
@@ -82,6 +114,7 @@
 
 
             <button
+                type="button"
                 class="prompt-btn"
                 onclick="setMode('interview')"
             >
@@ -90,6 +123,7 @@
 
 
             <button
+                type="button"
                 class="prompt-btn"
                 onclick="setMode('resume')"
             >
@@ -99,7 +133,9 @@
         </div>
 
 
-        <!-- CHAT -->
+        <!-- =========================
+             CHAT
+        ========================== -->
 
         <div
             class="chat-box"
@@ -108,37 +144,36 @@
 
             <div class="bot-message">
 
-                🌿 Welcome to Butterfly AI.
+                ✦ Welcome to Cognifile AI.
 
                 <br><br>
 
                 Ask me anything, upload a PDF or
                 image, or ask me to create an image.
 
-                <br><br>
-
-                🦋
-
             </div>
 
         </div>
 
 
-        <!-- FILE PREVIEW -->
+        <!-- =========================
+             FILE PREVIEW
+        ========================== -->
 
         <div
             id="filePreview"
             style="
-                display:none;
-                padding:0 20px 10px;
-                color:white;
-                font-size:13px;
+                display: none;
+                padding: 0 20px 10px;
+                font-size: 13px;
             "
         >
         </div>
 
 
-        <!-- INPUT -->
+        <!-- =========================
+             INPUT AREA
+        ========================== -->
 
         <div class="input-area">
 
@@ -169,7 +204,7 @@
                     .jpeg,
                     .webp
                 "
-                style="display:none;"
+                style="display: none;"
             >
 
 
@@ -197,16 +232,16 @@
                     image/jpeg,
                     image/webp
                 "
-                style="display:none;"
+                style="display: none;"
             >
 
 
-            <!-- TEXT -->
+            <!-- TEXT INPUT -->
 
             <input
                 type="text"
                 id="userInput"
-                placeholder="Ask Butterfly AI anything..."
+                placeholder="Ask Cognifile AI anything..."
                 autocomplete="off"
                 onkeypress="handleKey(event)"
             >
@@ -227,6 +262,11 @@
 
     </div>
 
+
+    <!--
+        EXISTING JAVASCRIPT
+        Keep this exactly as your current project uses it.
+    -->
 
     <script
         src="{{ url_for('static', filename='script.js') }}"
